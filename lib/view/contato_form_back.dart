@@ -2,7 +2,10 @@
 import 'package:agenda_slim/app/dominio/entidades/contato.dart';
 import 'package:agenda_slim/app/dominio/services/contato_service_validacao.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+
+import '../app/my_app.dart';
 
 class ContatoFormBack {
   Contato contato;
@@ -17,16 +20,15 @@ class ContatoFormBack {
 
   //goToForm(BuildContext context, [Contact contact]){
   //Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
- //}
+  //}
 
   //Validação Geral
   bool get isValid => _nomeValida && _emailValida && _telefoneValida;
 
-
   // diferenciar novo com alteração
   ContatoFormBack(BuildContext context) {
-    var parameter= ModalRoute.of(context).settings.arguments;
-    contato = (parameter==null) ? Contato() : parameter;
+    var parameter = ModalRoute.of(context).settings.arguments;
+    contato = (parameter == null) ? Contato() : parameter;
   }
 
 //Salvar
@@ -52,7 +54,7 @@ class ContatoFormBack {
       _emailValida = true;
       return null;
     } catch (erro) {
-      _emailValida= false;
+      _emailValida = false;
       return erro.toString();
     }
   }
