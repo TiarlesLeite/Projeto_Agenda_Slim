@@ -16,11 +16,12 @@ class ContatoFormBack {
   bool _telefoneValida;
 
   //goToForm(BuildContext context, [Contact contact]){
-   // Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
-    //}
+  //Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
+ //}
 
   //Validação Geral
   bool get isValid => _nomeValida && _emailValida && _telefoneValida;
+
 
   // diferenciar novo com alteração
   ContatoFormBack(BuildContext context) {

@@ -16,12 +16,6 @@ class ListaContato extends StatelessWidget {
     }
   }
 
-  // IconButton(
-  //  icon: Icon(Icons.add),
-  //  onPressed: () {
-  //    _back.goToForm(context);
-  //  })
-
   //Método para o Botão Editar
   Widget iconEditButton(Function onPressed) {
    // Contato contato;
@@ -29,7 +23,7 @@ class ListaContato extends StatelessWidget {
         icon: Icon(Icons.edit),
         color: Colors.orange,
          onPressed: onPressed);
-       // onPressed: () {_back.goToForm(context, contato); });
+      
   }
 
   //Método para botão Excluir
@@ -101,8 +95,7 @@ class ListaContato extends StatelessWidget {
                           width: 100,
                           child: Row(
                             children: [
-                              iconEditButton(() {
-                                _back.goToForm(context, contato);
+                              iconEditButton(() { _back.goToForm(context, contato);
                               }),
                               iconRemoveButton(context, () {
                                 _back.remove(contato.id);
