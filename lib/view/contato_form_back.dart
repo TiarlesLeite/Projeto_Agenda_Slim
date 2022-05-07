@@ -4,6 +4,7 @@ import 'package:agenda_slim/app/dominio/services/contato_service_validacao.dart'
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:mobx/mobx.dart';
 
 class ContatoFormBack {
   Contato contato;
@@ -11,34 +12,36 @@ class ContatoFormBack {
 //Cria uma variavel que recebe o serviço de dominio para salvar
   var _service = GetIt.I.get<ContatoServiceValidacao>();
 
-//Atributos de Controle para vaidar os campos no formulario
+//Atributos de Controle para validar os campos no formulario.
   bool _nomeValida;
   bool _emailValida;
   bool _telefoneValida;
 
   //Validação Geral
+  @action
   bool get isValid => _nomeValida && _emailValida && _telefoneValida;
 
-  // diferenciar novo com alteração
+  // diferenciar novo da alteração
   ContatoFormBack(BuildContext context) {
     var parameter = ModalRoute.of(context).settings.arguments;
     contato = (parameter == null) ? Contato() : parameter;
   }
 
 //Salvar
-  save() async {
+  save(BuildContext context) async {
     await _service.save(contato);
+    Navigator.of(context).pop();
   }
 
-//Validações enquanto preenche o formulario
+//Validações enquanto preenche o formulário
   String validaNome(String nome) {
     try {
       _service.validaNome(nome);
       _nomeValida = true;
       return null;
-    } catch (erro) {
+    } catch (e) {
       _nomeValida = false;
-      return erro.toString();
+      return e.toString();
     }
   }
 
@@ -47,9 +50,9 @@ class ContatoFormBack {
       _service.validaEmail(email);
       _emailValida = true;
       return null;
-    } catch (erro) {
+    } catch (e) {
       _emailValida = false;
-      return erro.toString();
+      return e.toString();
     }
   }
 
@@ -58,9 +61,9 @@ class ContatoFormBack {
       _service.validaTelefone(telefone);
       _telefoneValida = true;
       return null;
-    } catch (erro) {
+    } catch (e) {
       _telefoneValida = false;
-      return erro.toString();
+      return e.toString();
     }
   }
 }

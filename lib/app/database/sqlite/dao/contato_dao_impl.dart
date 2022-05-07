@@ -36,12 +36,12 @@ class ConatatoDAOImpl implements ContatoDAO {
     var sql;
     if (contato.id == null) {
       sql =
-          'INSERT INTO contato(noem, telefone,email,url_avatar) VALUES (?,?,?,?)';
+          'INSERT INTO contato(nome, telefone, email, url_avatar) VALUES (?,?,?,?)';
       _db.rawInsert(sql,
           [contato.nome, contato.telefone, contato.email, contato.urlAvatar]);
     } else {
       sql =
-          'UPDATE contato SET nome=?, telefone=?, email=?, url_avatar=? WHERE id=?';
+          'UPDATE contato SET nome = ?, telefone = ?, email = ?, url_avatar = ? WHERE id = ?';
       _db.rawUpdate(sql, [
         contato.nome,
         contato.telefone,

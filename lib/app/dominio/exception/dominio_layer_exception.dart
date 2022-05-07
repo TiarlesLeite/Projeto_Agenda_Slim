@@ -1,9 +1,9 @@
 //import 'dart:html';
 
-class DominioDaException implements Exception {
+class DominioLayerException implements Exception {
   String causa;
 
-  DominioDaException(this.causa);
+  DominioLayerException(this.causa);
 
   @override
   String toString() {
