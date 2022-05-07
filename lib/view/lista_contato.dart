@@ -89,8 +89,8 @@ class ListaContato extends StatelessWidget {
                         leading: circleAvatar(contato.urlAvatar),
                         title: Text(contato.nome),
                         onTap: () {
-                          // Ao Clicar direto no Contato Abre o Detalhes do Contato
-                          _back.goToDetails(context);
+                          // Chamada do Metodo que chama (abre) a tela dos Detalhes do Conatato
+                          _back.goToDetails(context, contato); 
                         },
                         subtitle: Text(contato.telefone),
                         trailing: Container(
