@@ -5,8 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../app/my_app.dart';
-
 class ContatoFormBack {
   Contato contato;
 
@@ -18,9 +16,6 @@ class ContatoFormBack {
   bool _emailValida;
   bool _telefoneValida;
 
-  //goToForm(BuildContext context, [Contact contact]){
-  //Navigator.of(context).pushNamed(MyApp.CONTACT_FORM, arguments: contact).then(refreshList);
-  //}
 
   //Validação Geral
   bool get isValid => _nomeValida && _emailValida && _telefoneValida;
