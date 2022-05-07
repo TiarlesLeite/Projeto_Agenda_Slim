@@ -1,3 +1,4 @@
+import 'package:agenda_slim/view/contato_details.dart';
 import 'package:agenda_slim/view/contato_form.dart';
 import 'package:flutter/material.dart';
 import '../view/lista_contato.dart';
@@ -8,6 +9,7 @@ class MyApp extends StatelessWidget {
   //Definimos as rotas no MyApp. Para quando utilizar na Lista basta chamar o MyApp
   static const HOME = '/';
   static const CONTATO_FORM = 'contato-form';
+  static const CONTATO_DETAILS = 'contato_details';
 
   // This widget is the root of your application.
   @override
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         //app de Strings Nome e Rota um Wigit responsavel.
         HOME: (context) => ListaContato(), // '/' seria a rota da tela principal
-        CONTATO_FORM: (context) => ContatoForm()
+        CONTATO_FORM: (context) => ContatoForm(),
+        CONTATO_DETAILS:(context) => ContatoDetails()
       },
     );
   }

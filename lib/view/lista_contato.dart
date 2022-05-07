@@ -1,4 +1,5 @@
 import 'package:agenda_slim/app/dominio/entidades/contato.dart';
+import 'package:agenda_slim/app/my_app.dart';
 import 'package:agenda_slim/view/contato_lista_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -18,12 +19,9 @@ class ListaContato extends StatelessWidget {
 
   //Método para o Botão Editar
   Widget iconEditButton(Function onPressed) {
-   // Contato contato;
+    // Contato contato;
     return IconButton(
-        icon: Icon(Icons.edit),
-        color: Colors.orange,
-         onPressed: onPressed);
-      
+        icon: Icon(Icons.edit), color: Colors.orange, onPressed: onPressed);
   }
 
   //Método para botão Excluir
@@ -81,21 +79,26 @@ class ListaContato extends StatelessWidget {
                 } else {
                   List<Contato> lista = futuro.data;
                   //Metodo buider constrole a lista
-                  return ListView.builder(                    
+                  return ListView.builder(
                     // traz a quantidades de elementos da lista
-                    itemCount: lista.length, 
+                    itemCount: lista.length,
                     itemBuilder: (context, i) {
                       var contato = lista[i];
                       return ListTile(
+                        //Para cada contato da lista
                         leading: circleAvatar(contato.urlAvatar),
                         title: Text(contato.nome),
-                        
+                        onTap: () {
+                          // Ao Clicar direto no Contato Abre o Detalhes do Contato
+                          _back.goToDetails(context);
+                        },
                         subtitle: Text(contato.telefone),
                         trailing: Container(
                           width: 100,
                           child: Row(
                             children: [
-                              iconEditButton(() { _back.goToForm(context, contato);
+                              iconEditButton(() {
+                                _back.goToForm(context, contato);
                               }),
                               iconRemoveButton(context, () {
                                 _back.remove(contato.id);

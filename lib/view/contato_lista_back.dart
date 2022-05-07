@@ -33,6 +33,9 @@ abstract class _ContatoListaBack with Store {
         .pushNamed(MyApp.CONTATO_FORM, arguments: contato)
         .then(refreshList);
   }
+  goToDetails(BuildContext context){
+    Navigator.of(context).pushNamed(MyApp.CONTATO_DETAILS);
+  }
 
 //Excluir
   remove(int id) {
