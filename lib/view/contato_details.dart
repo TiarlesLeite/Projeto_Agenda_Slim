@@ -4,18 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContatoDetails extends StatelessWidget {
-//Método para Fazer a chamada externa: Abrir Chamada, Abrir e-mail etc
-  launchApp(String url, BuildContext context) async {
-    await canLaunch(url)
-        ? await launch(url)
-        : showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Alerta!'),
-                content: Text('Não á recurso diponivel.'),
-              );
-            });
+  showModalError(BuildContext context) {
+    var alert = AlertDialog(
+      title: Text('Alerta!'),
+      content: Text('Não foi possível encontrar um APP compatível.'),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        });
   }
 
   @override
@@ -82,7 +80,7 @@ class ContatoDetails extends StatelessWidget {
                           onPressed: () {
                             //Função do Botão
                             //Chama o Método de Chamada Externa
-                            launchApp('tel:${contato.telefone}', context);
+                            _back.launchTelefone(showModalError);
                           }),
                       //Botão de Menssagem SMS
                       IconButton(
@@ -93,6 +91,8 @@ class ContatoDetails extends StatelessWidget {
                           ),
                           onPressed: () {
                             //Função do Botão
+                            //Chama o Método de Chamada Externa
+                            _back.launchSMS(showModalError);
                           }),
                     ]),
                   ),
@@ -104,6 +104,9 @@ class ContatoDetails extends StatelessWidget {
                     'E-Mail:',
                     style: TextStyle(fontSize: 20, color: Colors.green),
                   ),
+                  onTap: () {
+                    _back.launchEmail(showModalError);
+                  },
                   subtitle: Text(
                     '${contato.email}',
                     style: TextStyle(fontSize: 15),

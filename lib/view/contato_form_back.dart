@@ -16,7 +16,6 @@ class ContatoFormBack {
   bool _emailValida;
   bool _telefoneValida;
 
-
   //Validação Geral
   bool get isValid => _nomeValida && _emailValida && _telefoneValida;
 
