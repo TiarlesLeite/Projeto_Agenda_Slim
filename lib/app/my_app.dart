@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import '../view/lista_contato.dart';
 
 class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
-
   //Definimos as rotas no MyApp. Para quando utilizar na Lista basta chamar o MyApp
   static const HOME = '/';
   static const CONTATO_FORM = 'contato-form';
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
         //app de Strings Nome e Rota um Wigit responsavel.
         HOME: (context) => ListaContato(), // '/' seria a rota da tela principal
         CONTATO_FORM: (context) => ContatoForm(),
-        CONTATO_DETAILS:(context) => ContatoDetails()
+        CONTATO_DETAILS: (context) => ContatoDetails()
       },
     );
   }

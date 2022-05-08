@@ -4,5 +4,6 @@ import 'app/my_app.dart';
 
 void main() {
   setupInjection();
+  //runApp Cria o Objeto responsavel pela execução da Classe (Objeto) MyApp adequandamente.
   runApp(MyApp());
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class ListaContato extends StatelessWidget {
+
   final _back = ContatoListaBack();
 
 //Classe para tratar o Avatar
@@ -16,14 +17,12 @@ class ListaContato extends StatelessWidget {
       return CircleAvatar(child: Icon(Icons.person));
     }
   }
-
   //Método para o Botão Editar
   Widget iconEditButton(Function onPressed) {
     // Contato contato;
     return IconButton(
         icon: Icon(Icons.edit), color: Colors.orange, onPressed: onPressed);
   }
-
   //Método para botão Excluir
   Widget iconRemoveButton(BuildContext context, Function() remove) {
     return IconButton(
@@ -50,17 +49,16 @@ class ListaContato extends StatelessWidget {
                   ));
         });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         //Conteiner possui posições predefinidas como appBar, body etc...
         appBar: AppBar(
-          title: Text('Lista de Contatos'),
+          title: Text('Lista de Contatos'), //Titulo da Tela
           actions: [
             //define uma lista de botões.
             IconButton(
-                icon: Icon(Icons.add),
+                icon: Icon(Icons.add, size: 40),
                 onPressed: () {
                   _back.goToForm(context);
                   //Cria o botão de voltar para lista de Contatos (<-)
@@ -82,15 +80,17 @@ class ListaContato extends StatelessWidget {
                   return ListView.builder(
                     // traz a quantidades de elementos da lista
                     itemCount: lista.length,
+                    //Apartir dete método construi cada item da Lista, no qual se tem acesso ao Indice,
                     itemBuilder: (context, i) {
-                      var contato = lista[i];
+                      var contato =
+                          lista[i]; // i = ao indice passado pelo parametro
                       return ListTile(
                         //Para cada contato da lista
                         leading: circleAvatar(contato.urlAvatar),
                         title: Text(contato.nome),
                         onTap: () {
                           // Chamada do Metodo que chama (abre) a tela dos Detalhes do Conatato
-                          _back.goToDetails(context, contato); 
+                          _back.goToDetails(context, contato);
                         },
                         subtitle: Text(contato.telefone),
                         trailing: Container(
