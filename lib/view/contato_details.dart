@@ -60,7 +60,7 @@ class ContatoDetails extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     'Telefone:',
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 42, 8, 100)),
                   ),
                   subtitle: Text(
                     '${contato.telefone}',
@@ -72,7 +72,7 @@ class ContatoDetails extends StatelessWidget {
                     child: Row(children: [
                       //Botão de Chamada
                       IconButton(
-                          color: Colors.green,
+                          color: Color.fromARGB(255, 42, 8, 100),
                           icon: Icon(
                             Icons.phone_android,
                             size: 40,
@@ -84,7 +84,7 @@ class ContatoDetails extends StatelessWidget {
                           }),
                       //Botão de Menssagem SMS
                       IconButton(
-                          color: Colors.green,
+                          color: Color.fromARGB(255, 42, 8, 100),
                           icon: Icon(
                             Icons.message,
                             size: 30,
@@ -102,7 +102,8 @@ class ContatoDetails extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     'E-Mail:',
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromARGB(255, 42, 8, 100)),
                   ),
                   onTap: () {
                     _back.launchEmail(showModalError);
@@ -118,7 +119,6 @@ class ContatoDetails extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             //Definindo o Botão de Voltar da tela de Detales do Contato
             child: Icon(Icons.arrow_back_ios_new),
-
             //Chama a Função de voltar especificada em "contato_detail_back.dart"
             onPressed: () {
               _back.goToBack();

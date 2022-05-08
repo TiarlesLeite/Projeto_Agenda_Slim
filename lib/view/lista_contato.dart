@@ -3,26 +3,28 @@ import 'package:agenda_slim/app/my_app.dart';
 import 'package:agenda_slim/view/contato_lista_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListaContato extends StatelessWidget {
-
   final _back = ContatoListaBack();
 
 //Classe para tratar o Avatar
   CircleAvatar circleAvatar(String url) {
     if (Uri.tryParse(url).isAbsolute) {
       //Verifica se o link da imagem é valido
-      return CircleAvatar(backgroundImage: NetworkImage(url));
+      return CircleAvatar(backgroundImage: NetworkImage(url), radius: 30);
     } else {
-      return CircleAvatar(child: Icon(Icons.person));
+      return CircleAvatar(child: Icon(Icons.person), radius: 30);
     }
   }
+
   //Método para o Botão Editar
   Widget iconEditButton(Function onPressed) {
     // Contato contato;
     return IconButton(
         icon: Icon(Icons.edit), color: Colors.orange, onPressed: onPressed);
   }
+
   //Método para botão Excluir
   Widget iconRemoveButton(BuildContext context, Function() remove) {
     return IconButton(
@@ -49,6 +51,7 @@ class ListaContato extends StatelessWidget {
                   ));
         });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,12 +90,23 @@ class ListaContato extends StatelessWidget {
                       return ListTile(
                         //Para cada contato da lista
                         leading: circleAvatar(contato.urlAvatar),
-                        title: Text(contato.nome),
+                        title: Text(
+                          contato.nome,
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 42, 8, 100)),
+                        ),
+
                         onTap: () {
                           // Chamada do Metodo que chama (abre) a tela dos Detalhes do Conatato
                           _back.goToDetails(context, contato);
                         },
-                        subtitle: Text(contato.telefone),
+                        subtitle: Text(
+                          contato.telefone,
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Color.fromARGB(255, 63, 42, 100)),
+                        ),
                         trailing: Container(
                           width: 100,
                           child: Row(
