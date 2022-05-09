@@ -11,25 +11,25 @@ CREATE TABLE contato(
 
 final insert1 = '''
 INSERT INTO contato (nome, telefone, email, url_avatar)
-VALUES ('Tiarles','(51)99570-6770','felipe@email.com','https://cdn.pixabay.com/photo/2021/07/03/10/54/naruto-6383641_960_720.png')
+VALUES ('Wagner','(51) 9 9570-6770','felipe@email.com','https://cdn.pixabay.com/photo/2021/07/03/10/54/naruto-6383641_960_720.png')
 ''';
 
 final insert2 = '''
 INSERT INTO contato (nome, telefone, email, url_avatar)
-VALUES ('Fatima','(89)98456-1739','fatima@email.com','https://cdn.pixabay.com/photo/2021/01/17/09/11/woman-5924367_960_720.png')
+VALUES ('Fatima','(89) 9 8456-1739','fatima@email.com','https://cdn.pixabay.com/photo/2021/01/17/09/11/woman-5924367_960_720.png')
 ''';
 
 final insert3 = '''
 INSERT INTO contato (nome, telefone, email, url_avatar)
-VALUES ('Uhtred','(55)98765-4321','uhtred@email.com','https://cdn.pixabay.com/photo/2020/11/22/22/17/male-5768177_960_720.png')
+VALUES ('Uhtred','(55) 9 8765-4321','uhtred@email.com','https://cdn.pixabay.com/photo/2020/11/22/22/17/male-5768177_960_720.png')
 ''';
 
 final insert4 = '''
 INSERT INTO contato (nome, telefone, email, url_avatar)
-VALUES ('Berenice','(89)92345-6789','berenice@email.com','https://cdn.pixabay.com/photo/2022/03/10/07/51/woman-7059281_960_720.png')
+VALUES ('Berenice','(89) 9 2345-6789','berenice@email.com','https://cdn.pixabay.com/photo/2022/03/10/07/51/woman-7059281_960_720.png')
 ''';
 
 final insert5 = '''
 INSERT INTO contato (nome, telefone, email, url_avatar)
-VALUES ('Rebeka','(45)99843-5789','rebeka@email.com','https://cdn.pixabay.com/photo/2021/09/24/22/05/woman-6653634_960_720.jpg')
+VALUES ('Rebeka','(45) 9 9843-5789','rebeka@email.com','https://cdn.pixabay.com/photo/2021/09/24/22/05/woman-6653634_960_720.jpg')
 ''';

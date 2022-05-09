@@ -14,19 +14,19 @@ class ContatoDetailsBack {
   }
 
 //Método para Fazer a chamada externa: Abrir Chamada, Abrir e-mail etc
-   _launchApp(String url, Function(BuildContext context) showModalError) async{
+  _launchApp(String url, Function(BuildContext context) showModalError) async {
     await canLaunch(url) ? await launch(url) : showModalError(context);
   }
 
-  launchTelefone(Function(BuildContext context) showModalError){
+  launchTelefone(Function(BuildContext context) showModalError) {
     _launchApp('tel:${contato.telefone}', showModalError);
   }
 
-  launchSMS(Function(BuildContext context) showModalError){
+  launchSMS(Function(BuildContext context) showModalError) {
     _launchApp('sms:${contato.telefone}', showModalError);
   }
 
-  launchEmail(Function(BuildContext context) showModalError){
+  launchEmail(Function(BuildContext context) showModalError) {
     _launchApp('mailto:${contato.email}', showModalError);
   }
 }

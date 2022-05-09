@@ -10,7 +10,7 @@ import 'package:sqflite/sqflite.dart';
 ///Quando separamos o domínio da infraestrutura estamos separando as regras de negócio com uma
 ///implementação especifica criando uma independente de tecnologia. Por exemplo, hoje estamos
 ///utilizando aqui o SQLITE. Se daqui um tempo resolve substituir a tecnologia o db em especifico,
-///basta implementar um novo db, aproveitando toda as regras do domínio e camada de visão(view),
+///basta implementar um novo db, aproveitando toda as regras do domínio e da camada de visão(view),
 ///favorecendo o trabalho em equipe, reaproveitamento do código, a aplicação de testes específicos e
 ///facilita a manutenção além deque o conhecimento dessa infraestrutura, dessa visão de implementação
 ///valoriza o profissional.

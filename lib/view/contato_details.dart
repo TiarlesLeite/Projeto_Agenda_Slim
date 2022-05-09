@@ -60,7 +60,8 @@ class ContatoDetails extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     'Telefone:',
-                    style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 42, 8, 100)),
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromARGB(255, 42, 8, 100)),
                   ),
                   subtitle: Text(
                     '${contato.telefone}',
