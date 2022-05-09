@@ -4,16 +4,6 @@ import 'package:agenda_slim/app/database/sqlite/script.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-//Classe de conexão com BD:  
-///Uma classe especifica de conexão como o banco de dados sem os comandos conforme a documentação é mais
-///adequando devido a possibilidade da conexão poder sofre mais mudanças do que 
-///a dos comandos no qual são mais simples determinado o INSERT, UPDATE, DELETE, SELECT e se não houver
-///mudanças de regras ou tecnologia não se altera mais...
-///Do contrário aqui na conexão possuir o "createtable", pode haver muitas alterações no projeto.
-///Separa os códigos que podem sofrer muitas alterações dos que não podem é um dos requisitos recomendados uma
-///vez que ter uma classe expecifica de conexão permite reproveitar a classe em diversos momentos,
-///realizar testes e fazer o tratamento de Erros específicos.
-///
 
 class ConexaoDB {
 

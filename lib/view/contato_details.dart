@@ -15,7 +15,6 @@ class ContatoDetails extends StatelessWidget {
           return alert;
         });
   }
-
   @override
   Widget build(BuildContext context) {
     var _back = ContatoDetailsBack(context);

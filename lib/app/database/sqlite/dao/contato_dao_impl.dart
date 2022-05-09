@@ -3,19 +3,6 @@ import 'package:agenda_slim/app/dominio/entidades/contato.dart';
 import 'package:agenda_slim/app/dominio/intefaces/contato_dao.dart';
 import 'package:sqflite/sqflite.dart';
 
-///Quem define o que o "dao" deve fazer, Salvar, Alterar, Excluir ou Consultar é a camada de
-///domínio do Projeto aonde definirmos o que precisa e como trabalhar.
-///Mas quem implementa de fato é a camada de Infraestrutura no qual chamamos aqui de Database.
-///Parece uma coisa só, né? Mas não.
-///Quando separamos o domínio da infraestrutura estamos separando as regras de negócio com uma
-///implementação especifica criando uma independente de tecnologia. Por exemplo, hoje estamos
-///utilizando aqui o SQLITE. Se daqui um tempo resolve substituir a tecnologia o db em especifico,
-///basta implementar um novo db, aproveitando toda as regras do domínio e da camada de visão(view),
-///favorecendo o trabalho em equipe, reaproveitamento do código, a aplicação de testes específicos e
-///facilita a manutenção além deque o conhecimento dessa infraestrutura, dessa visão de implementação
-///valoriza o profissional.
-
-
 //implementando a classe "contato_dao.dart" da camada de dominio (dominio > interfaces > contato_dao.dart)
 
 class ConatatoDAOImpl implements ContatoDAO { 
